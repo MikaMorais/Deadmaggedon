@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprite/zombies/femalezombie/Attack (4).png" type="Texture" id=2]
@@ -70,7 +70,9 @@
 [ext_resource path="res://tileset/Tiles/Tile (8).png" type="Texture" id=68]
 [ext_resource path="res://scenes/Coin.tscn" type="PackedScene" id=69]
 [ext_resource path="res://scenes/Heart.tscn" type="PackedScene" id=70]
-[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=71]
+[ext_resource path="res://tileset/Coins/single_coin.png" type="Texture" id=71]
+[ext_resource path="res://fonts/m04b.TTF" type="DynamicFontData" id=72]
+[ext_resource path="res://tileset/Hearts/single_heart.png" type="Texture" id=73]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -385,15 +387,15 @@ animations = [ {
 "name": "idle",
 "speed": 50.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 45 ), ExtResource( 33 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 41 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 21 ) ],
-"loop": false,
-"name": "dead",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 40 ), ExtResource( 43 ), ExtResource( 26 ), ExtResource( 11 ), ExtResource( 27 ), ExtResource( 36 ), ExtResource( 19 ), ExtResource( 46 ), ExtResource( 39 ), ExtResource( 37 ) ],
 "loop": true,
 "name": "walk",
 "speed": 10.5
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 45 ), ExtResource( 33 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 41 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 21 ) ],
+"loop": false,
+"name": "dead",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
@@ -401,11 +403,24 @@ animations = [ {
 "speed": 10.5
 } ]
 
+[sub_resource type="DynamicFont" id=12]
+size = 30
+font_data = ExtResource( 72 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 30
+font_data = ExtResource( 72 )
+
 [node name="Game" type="Node2D"]
 
-[node name="BG" type="Sprite" parent="."]
-position = Vector2( 1257.98, 325.656 )
-scale = Vector2( 1.25399, 1.18926 )
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 1 )
+
+[node name="BG" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 905.97, 151.604 )
+scale = Vector2( 1.77123, 1.66491 )
 texture = ExtResource( 64 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -414,8 +429,6 @@ tile_set = SubResource( 9 )
 cell_size = Vector2( 128, 128 )
 format = 1
 tile_data = PoolIntArray( 393220, 9, 0, 393221, 1, 0, 393222, 1, 0, 393223, 5, 0, 393226, 9, 0, 393227, 1, 0, 393228, 5, 0, 458752, 9, 0, 458753, 1, 0, 458754, 1, 0, 458755, 1, 0, 458756, 11, 0, 458757, 7, 0, 458758, 7, 0, 458759, 8, 0, 458762, 6, 0, 458763, 7, 0, 458764, 13, 0, 458765, 1, 0, 458766, 1, 0, 458767, 1, 0, 458768, 5, 0, 524288, 6, 0, 524289, 7, 0, 524290, 7, 0, 524291, 7, 0, 524292, 7, 0, 524293, 7, 0, 524294, 7, 0, 524295, 8, 0, 524298, 6, 0, 524299, 7, 0, 524300, 7, 0, 524301, 7, 0, 524302, 7, 0, 524303, 7, 0, 524304, 13, 0, 524305, 1, 0, 524306, 5, 0, 589824, 15, 0, 589825, 12, 0, 589826, 12, 0, 589827, 12, 0, 589828, 12, 0, 589829, 12, 0, 589830, 12, 0, 589831, 16, 0, 589834, 15, 0, 589835, 12, 0, 589836, 12, 0, 589837, 12, 0, 589838, 12, 0, 589839, 12, 0, 589840, 12, 0, 589841, 12, 0, 589842, 16, 0 )
-
-[node name="HUD" parent="." instance=ExtResource( 71 )]
 
 [node name="Bone (1)" type="Sprite" parent="."]
 position = Vector2( 26.877, 548.914 )
@@ -452,7 +465,7 @@ position = Vector2( 241.646, 424.833 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 10 )
 animation = "attack"
-frame = 6
+frame = 3
 playing = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
@@ -461,6 +474,10 @@ position = Vector2( 616.64, 316.534 )
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 0, 1.12247 )
 current = true
+zoom = Vector2( 2, 2 )
+limit_left = 0
+limit_bottom = 965
+smoothing_enabled = true
 
 [node name="Collectables" type="Node" parent="."]
 
@@ -493,3 +510,47 @@ scale = Vector2( 0.7, 0.7 )
 [node name="Coin4" parent="Collectables/points" instance=ExtResource( 69 )]
 position = Vector2( 1563.8, 218.67 )
 scale = Vector2( 0.7, 0.7 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="life" type="Label" parent="CanvasLayer"]
+anchor_left = 0.747
+anchor_top = 0.047
+anchor_right = 0.835
+anchor_bottom = 0.097
+margin_left = 16.83
+margin_top = -8.2091
+margin_right = 16.718
+margin_bottom = -8.2091
+custom_fonts/font = SubResource( 12 )
+custom_constants/shadow_offset_x = 10
+custom_constants/shadow_offset_y = 5
+text = "HP:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="single_heart" type="Sprite" parent="CanvasLayer/life"]
+position = Vector2( 117.175, 16.664 )
+scale = Vector2( 0.117761, 0.10785 )
+texture = ExtResource( 73 )
+
+[node name="score2" type="Label" parent="CanvasLayer"]
+anchor_left = 0.099
+anchor_top = 0.061
+anchor_right = 0.187
+anchor_bottom = 0.111
+margin_left = -0.150604
+margin_top = 0.127903
+margin_right = -0.262604
+margin_bottom = 0.127899
+custom_fonts/font = SubResource( 13 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="single_coin" type="Sprite" parent="CanvasLayer/score2"]
+position = Vector2( -47.0118, 11.547 )
+scale = Vector2( 0.32239, 0.280515 )
+texture = ExtResource( 71 )

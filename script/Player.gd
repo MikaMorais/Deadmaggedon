@@ -15,6 +15,9 @@ func _physics_process(delta): # functions in FPS
 		var grounded = is_on_floor()
 		var on_floor = $RayR.is_colliding() or $RayL.is_colliding()
 		
+		if Input.is_action_pressed("exit"):
+			get_tree().quit()
+		
 		if Input.is_action_pressed("right"):
 			$Sprite.animation = "walk"
 			$Sprite.flip_h = false
