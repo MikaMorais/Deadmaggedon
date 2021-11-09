@@ -1,51 +1,8 @@
-[gd_scene load_steps=86 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://sprite/zombies/femalezombie/Attack (4).png" type="Texture" id=2]
-[ext_resource path="res://sprite/zombies/femalezombie/Attack (6).png" type="Texture" id=3]
-[ext_resource path="res://sprite/zombies/femalezombie/Attack (5).png" type="Texture" id=4]
-[ext_resource path="res://sprite/zombies/femalezombie/Attack (2).png" type="Texture" id=5]
-[ext_resource path="res://sprite/zombies/femalezombie/Attack (3).png" type="Texture" id=6]
-[ext_resource path="res://sprite/zombies/femalezombie/Attack (1).png" type="Texture" id=7]
-[ext_resource path="res://sprite/zombies/femalezombie/Attack (7).png" type="Texture" id=8]
-[ext_resource path="res://sprite/zombies/femalezombie/Attack (8).png" type="Texture" id=9]
-[ext_resource path="res://sprite/zombies/femalezombie/Dead (1).png" type="Texture" id=10]
-[ext_resource path="res://sprite/zombies/femalezombie/Walk (4).png" type="Texture" id=11]
-[ext_resource path="res://sprite/zombies/femalezombie/Dead (4).png" type="Texture" id=12]
-[ext_resource path="res://sprite/zombies/femalezombie/Idle (9).png" type="Texture" id=13]
-[ext_resource path="res://sprite/zombies/femalezombie/Dead (7).png" type="Texture" id=14]
-[ext_resource path="res://sprite/zombies/femalezombie/Dead (5).png" type="Texture" id=15]
-[ext_resource path="res://sprite/zombies/femalezombie/Dead (8).png" type="Texture" id=16]
-[ext_resource path="res://sprite/zombies/femalezombie/Dead (6).png" type="Texture" id=17]
-[ext_resource path="res://sprite/zombies/femalezombie/Idle (2).png" type="Texture" id=18]
-[ext_resource path="res://sprite/zombies/femalezombie/Walk (7).png" type="Texture" id=19]
-[ext_resource path="res://sprite/zombies/femalezombie/Idle (15).png" type="Texture" id=20]
-[ext_resource path="res://sprite/zombies/femalezombie/Dead (12).png" type="Texture" id=21]
-[ext_resource path="res://sprite/zombies/femalezombie/Dead (10).png" type="Texture" id=22]
-[ext_resource path="res://sprite/zombies/femalezombie/Idle (1).png" type="Texture" id=23]
-[ext_resource path="res://sprite/zombies/femalezombie/Idle (7).png" type="Texture" id=24]
-[ext_resource path="res://sprite/zombies/femalezombie/Dead (11).png" type="Texture" id=25]
-[ext_resource path="res://sprite/zombies/femalezombie/Walk (3).png" type="Texture" id=26]
-[ext_resource path="res://sprite/zombies/femalezombie/Walk (5).png" type="Texture" id=27]
-[ext_resource path="res://sprite/zombies/femalezombie/Idle (3).png" type="Texture" id=28]
-[ext_resource path="res://sprite/zombies/femalezombie/Idle (10).png" type="Texture" id=29]
-[ext_resource path="res://sprite/zombies/femalezombie/Idle (6).png" type="Texture" id=30]
-[ext_resource path="res://sprite/zombies/femalezombie/Idle (4).png" type="Texture" id=31]
-[ext_resource path="res://sprite/zombies/femalezombie/Idle (11).png" type="Texture" id=32]
-[ext_resource path="res://sprite/zombies/femalezombie/Dead (3).png" type="Texture" id=33]
-[ext_resource path="res://sprite/zombies/femalezombie/Idle (8).png" type="Texture" id=34]
-[ext_resource path="res://sprite/zombies/femalezombie/Idle (13).png" type="Texture" id=35]
-[ext_resource path="res://sprite/zombies/femalezombie/Walk (6).png" type="Texture" id=36]
-[ext_resource path="res://sprite/zombies/femalezombie/Walk (10).png" type="Texture" id=37]
-[ext_resource path="res://sprite/zombies/femalezombie/Idle (5).png" type="Texture" id=38]
-[ext_resource path="res://sprite/zombies/femalezombie/Walk (9).png" type="Texture" id=39]
-[ext_resource path="res://sprite/zombies/femalezombie/Walk (1).png" type="Texture" id=40]
-[ext_resource path="res://sprite/zombies/femalezombie/Dead (9).png" type="Texture" id=41]
-[ext_resource path="res://sprite/zombies/femalezombie/Idle (14).png" type="Texture" id=42]
-[ext_resource path="res://sprite/zombies/femalezombie/Walk (2).png" type="Texture" id=43]
-[ext_resource path="res://sprite/zombies/femalezombie/Idle (12).png" type="Texture" id=44]
-[ext_resource path="res://sprite/zombies/femalezombie/Dead (2).png" type="Texture" id=45]
-[ext_resource path="res://sprite/zombies/femalezombie/Walk (8).png" type="Texture" id=46]
+[ext_resource path="res://scenes/FemaleZombie.tscn" type="PackedScene" id=2]
+[ext_resource path="res://script/Game.gd" type="Script" id=3]
 [ext_resource path="res://tileset/Tiles/Tile (4).png" type="Texture" id=47]
 [ext_resource path="res://tileset/Tiles/Tile (1).png" type="Texture" id=48]
 [ext_resource path="res://tileset/Tiles/Tile (6).png" type="Texture" id=49]
@@ -380,38 +337,16 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
 } ]
 18/z_index = 0
 
-[sub_resource type="SpriteFrames" id=10]
-animations = [ {
-"frames": [ ExtResource( 23 ), ExtResource( 18 ), ExtResource( 28 ), ExtResource( 31 ), ExtResource( 38 ), ExtResource( 30 ), ExtResource( 24 ), ExtResource( 34 ), ExtResource( 13 ), ExtResource( 29 ), ExtResource( 32 ), ExtResource( 44 ), ExtResource( 35 ), ExtResource( 42 ), ExtResource( 20 ) ],
-"loop": true,
-"name": "idle",
-"speed": 50.0
-}, {
-"frames": [ ExtResource( 40 ), ExtResource( 43 ), ExtResource( 26 ), ExtResource( 11 ), ExtResource( 27 ), ExtResource( 36 ), ExtResource( 19 ), ExtResource( 46 ), ExtResource( 39 ), ExtResource( 37 ) ],
-"loop": true,
-"name": "walk",
-"speed": 10.5
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 45 ), ExtResource( 33 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 41 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 21 ) ],
-"loop": false,
-"name": "dead",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "attack",
-"speed": 10.5
-} ]
+[sub_resource type="DynamicFont" id=11]
+size = 30
+font_data = ExtResource( 72 )
 
 [sub_resource type="DynamicFont" id=12]
 size = 30
 font_data = ExtResource( 72 )
 
-[sub_resource type="DynamicFont" id=13]
-size = 30
-font_data = ExtResource( 72 )
-
 [node name="Game" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -419,7 +354,7 @@ font_data = ExtResource( 72 )
 motion_scale = Vector2( 0.2, 1 )
 
 [node name="BG" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 905.97, 151.604 )
+position = Vector2( 909.75, 149.455 )
 scale = Vector2( 1.77123, 1.66491 )
 texture = ExtResource( 64 )
 
@@ -459,14 +394,6 @@ texture = ExtResource( 62 )
 position = Vector2( 991.604, 422.608 )
 scale = Vector2( 0.596506, 0.515102 )
 texture = ExtResource( 62 )
-
-[node name="FemaleZombie" type="AnimatedSprite" parent="."]
-position = Vector2( 241.646, 424.833 )
-scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 10 )
-animation = "attack"
-frame = 3
-playing = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 616.64, 316.534 )
@@ -511,46 +438,51 @@ scale = Vector2( 0.7, 0.7 )
 position = Vector2( 1563.8, 218.67 )
 scale = Vector2( 0.7, 0.7 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="life" type="Label" parent="CanvasLayer"]
-anchor_left = 0.747
-anchor_top = 0.047
-anchor_right = 0.835
-anchor_bottom = 0.097
-margin_left = 16.83
-margin_top = -8.2091
-margin_right = 16.718
-margin_bottom = -8.2091
-custom_fonts/font = SubResource( 12 )
-custom_constants/shadow_offset_x = 10
-custom_constants/shadow_offset_y = 5
-text = "HP:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="single_heart" type="Sprite" parent="CanvasLayer/life"]
-position = Vector2( 117.175, 16.664 )
-scale = Vector2( 0.117761, 0.10785 )
-texture = ExtResource( 73 )
-
-[node name="score2" type="Label" parent="CanvasLayer"]
+[node name="score" type="Label" parent="HUD"]
 anchor_left = 0.099
 anchor_top = 0.061
 anchor_right = 0.187
 anchor_bottom = 0.111
-margin_left = -0.150604
+margin_left = 1.0386
 margin_top = 0.127903
-margin_right = -0.262604
-margin_bottom = 0.127899
-custom_fonts/font = SubResource( 13 )
-text = "0"
+margin_right = 0.926605
+margin_bottom = 0.127907
+custom_fonts/font = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="single_coin" type="Sprite" parent="CanvasLayer/score2"]
+[node name="single_coin" type="Sprite" parent="HUD/score"]
 position = Vector2( -47.0118, 11.547 )
 scale = Vector2( 0.32239, 0.280515 )
 texture = ExtResource( 71 )
+
+[node name="life" type="Label" parent="HUD"]
+anchor_left = 0.098
+anchor_top = 0.167
+anchor_right = 0.186
+anchor_bottom = 0.217
+margin_left = 0.128159
+margin_top = -0.160332
+margin_right = 0.0161591
+margin_bottom = -0.160339
+custom_fonts/font = SubResource( 12 )
+custom_constants/shadow_offset_x = 10
+custom_constants/shadow_offset_y = 5
+text = "x "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="single_heart" type="Sprite" parent="HUD/life"]
+position = Vector2( -42.1761, 14.9086 )
+scale = Vector2( 0.117761, 0.10785 )
+texture = ExtResource( 73 )
+
+[node name="FemaleZombie" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2243.43, 122.695 )
+
+[node name="FemaleZombie2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1622.77, -0.527145 )

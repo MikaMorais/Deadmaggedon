@@ -40,4 +40,6 @@ frames = SubResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 5 )
 
+[node name="Node2D" type="Node2D" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_Heart_body_entered"]
