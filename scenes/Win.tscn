@@ -1,25 +1,24 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://script/Menu.gd" type="Script" id=1]
 [ext_resource path="res://fonts/m04b.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://tileset/menu/menu_background.jpg" type="Texture" id=3]
-[ext_resource path="res://tileset/menu/zombie_brain_logo.png" type="Texture" id=4]
-[ext_resource path="res://tileset/Objects/X.png" type="Texture" id=5]
-[ext_resource path="res://tileset/Objects/blood.png" type="Texture" id=6]
+[ext_resource path="res://scenes/Coin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sprite/player/Jump (10).png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.635294, 0.294118, 0.294118, 1 )
+bg_color = Color( 0.294118, 0.298039, 0.635294, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0.635294, 0.294118, 0.294118, 1 )
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.294118, 0.298039, 0.635294, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -37,27 +36,27 @@ size = 25
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.635294, 0.294118, 0.294118, 1 )
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id=10]
-bg_color = Color( 0.635294, 0.294118, 0.294118, 1 )
+bg_color = Color( 0.294118, 0.298039, 0.635294, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.294118, 0.298039, 0.635294, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.227451, 0.227451, 0.227451, 1 )
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 size = 25
 font_data = ExtResource( 2 )
 
@@ -73,57 +72,27 @@ scale = Vector2( 1.7563, 1.84733 )
 texture = ExtResource( 3 )
 offset = Vector2( 239.32, -108.193 )
 
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer"]
-margin_left = 319.0
-margin_top = 227.0
-margin_right = 768.0
-margin_bottom = 467.0
-texture = ExtResource( 6 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Jump (10)" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 520.564, 185.223 )
+scale = Vector2( 0.738235, 0.713419 )
+texture = ExtResource( 5 )
 
-[node name="Logo" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 524.564, 134.209 )
-scale = Vector2( 0.539436, 0.505997 )
-texture = ExtResource( 4 )
+[node name="Coin" parent="CanvasLayer" instance=ExtResource( 4 )]
+position = Vector2( 667.933, 184.921 )
 
 [node name="Title" type="Label" parent="CanvasLayer"]
 anchor_top = 0.00833333
 anchor_bottom = 0.00833333
-margin_left = 230.41
-margin_top = 222.955
-margin_right = 855.41
-margin_bottom = 272.955
+margin_left = 253.037
+margin_top = 329.021
+margin_right = 878.037
+margin_bottom = 379.021
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_shadow = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.501961, 0, 1, 1 )
 custom_constants/shadow_offset_x = 7
-text = "GAME OVER"
+text = "YOU WON!!!"
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-margin_left = 421.74
-margin_top = 65.0
-margin_right = 501.74
-margin_bottom = 133.0
-texture = ExtResource( 5 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
-margin_left = 490.48
-margin_top = 45.4494
-margin_right = 588.48
-margin_bottom = 127.449
-texture = ExtResource( 5 )
-expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -133,12 +102,12 @@ anchor_left = 0.416
 anchor_top = 0.595
 anchor_right = 0.642
 anchor_bottom = 0.677
-margin_left = -5.62912
-margin_top = 3.08029
-margin_right = -6.0531
-margin_bottom = 2.88034
+margin_left = -16.9428
+margin_top = 89.3472
+margin_right = -17.3668
+margin_bottom = 89.1473
 custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 9 )
+custom_styles/pressed = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
 custom_fonts/font = SubResource( 5 )
 text = "RESTART"
@@ -151,14 +120,14 @@ anchor_left = 0.412
 anchor_top = 0.741
 anchor_right = 0.638
 anchor_bottom = 0.823
-margin_left = -1.81363
-margin_top = 1.05872
-margin_right = -2.23767
-margin_bottom = 0.858612
+margin_left = -13.1273
+margin_top = 87.3257
+margin_right = -13.5514
+margin_bottom = 87.1255
 custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 10 )
-custom_styles/normal = SubResource( 7 )
-custom_fonts/font = SubResource( 8 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false

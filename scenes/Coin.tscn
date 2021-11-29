@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://script/Coin.gd" type="Script" id=1]
 [ext_resource path="res://tileset/Coins/coins.png" type="Texture" id=2]
+[ext_resource path="res://audio/coin_sound.wav" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -53,11 +54,14 @@ script = ExtResource( 1 )
 position = Vector2( -2.6014, 13.9104 )
 scale = Vector2( 0.55, 0.55 )
 frames = SubResource( 7 )
-frame = 2
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.706319, 0 )
 shape = SubResource( 8 )
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="body_entered" from="." to="." method="_on_Item_body_entered"]

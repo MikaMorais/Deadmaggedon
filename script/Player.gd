@@ -40,6 +40,7 @@ func _physics_process(delta): # functions in FPS
 				move_direction = 0
 				
 			if grounded and Input.is_action_just_pressed("jump"):
+				$JumpSound.play()
 				y_velocity = -JUMP_FORCE
 				$Sprite.animation = "jump"
 			
@@ -55,6 +56,7 @@ func _physics_process(delta): # functions in FPS
 			
 func dead():
 	isDead = true
+	y_velocity = Vector2(0, 0)
 	$Sprite.animation = "dead"
 
 
